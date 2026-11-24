@@ -1,0 +1,697 @@
+/* =========================================================
+   VARIÁVEIS & IDENTIDADE MAESTRINI & GOMES
+========================================================= */
+:root {
+  --dark-forest: #171715;
+  --gold-accent: #E5C16C;
+  --gold-strong: #C99E3E;
+  --cream-bg: #FAF6F0;
+  --white: #FFFFFF;
+  --text-dark: #1A1917;
+  --text-muted: #57524B;
+  --wa-green: #25D366;
+  --transition: all 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--white);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3 {
+  font-family: 'Fraunces', serif;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+}
+
+.container {
+  width: 90%;
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+/* =========================================================
+   BOTÕES ESTILO PÍLULA
+========================================================= */
+.btn-pill {
+  display: inline-block;
+  padding: 13px 28px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition);
+}
+
+.btn-gold {
+  background-color: var(--gold-accent);
+  color: var(--dark-forest);
+}
+
+.btn-gold:hover {
+  background-color: var(--white);
+  transform: translateY(-3px);
+}
+
+.btn-gold-solid {
+  background-color: var(--gold-accent);
+  color: var(--dark-forest);
+}
+
+.btn-gold-solid:hover {
+  background-color: var(--gold-strong);
+  color: var(--white);
+  transform: translateY(-3px);
+}
+
+.btn-glass {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--white);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn-glass:hover {
+  background: var(--white);
+  color: var(--dark-forest);
+}
+
+.btn-dark-full {
+  width: 100%;
+  background: var(--dark-forest);
+  color: var(--gold-accent);
+  margin-top: 6px;
+}
+
+.btn-dark-full:hover {
+  background: #2C2B27;
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   1. HERO FULL-BLEED (IMAGEM NO FUNDO COM TRANSPARÊNCIA)
+========================================================= */
+.hero-editorial {
+  position: relative;
+  min-height: 92vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #171715;
+  padding: 28px 0 80px;
+  overflow: hidden;
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.42;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(23, 23, 21, 0.45) 0%,
+    rgba(23, 23, 21, 0.15) 50%,
+    rgba(23, 23, 21, 0.85) 100%
+  );
+  z-index: 1;
+}
+
+.top-bar,
+.hero-title-wrap {
+  position: relative;
+  z-index: 2;
+}
+
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-mark {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  color: var(--white);
+}
+
+.logo-mark span {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-accent);
+  display: grid;
+  place-items: center;
+  color: var(--gold-accent);
+  font-size: 1.1rem;
+  background: rgba(23, 23, 21, 0.45);
+}
+
+.logo-mark strong {
+  display: block;
+  font-size: 0.95rem;
+  letter-spacing: 1.4px;
+}
+
+.logo-mark small {
+  display: block;
+  font-size: 0.62rem;
+  letter-spacing: 2px;
+  color: var(--gold-accent);
+}
+
+.hero-title-wrap {
+  margin-top: auto;
+  padding-top: 90px;
+  max-width: 780px;
+}
+
+.hero-kicker {
+  display: inline-block;
+  color: var(--white);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.hero-title-wrap h1 {
+  font-size: clamp(2.8rem, 6.2vw, 5.2rem);
+  color: var(--gold-accent);
+  margin-bottom: 18px;
+  text-shadow: 0 4px 22px rgba(0, 0, 0, 0.55);
+}
+
+.hero-lead {
+  color: var(--white);
+  font-size: 1.15rem;
+  max-width: 560px;
+  margin-bottom: 28px;
+  text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+}
+
+.hero-cta-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+/* =========================================================
+   2. FAIXA ESCURA EM 2 COLUNAS
+========================================================= */
+.band-dark {
+  background-color: var(--dark-forest);
+  color: var(--white);
+  padding: 96px 0;
+}
+
+.split-intro {
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 48px;
+  align-items: start;
+}
+
+.intro-left h2 {
+  font-size: clamp(2.1rem, 3.8vw, 3.1rem);
+  color: var(--gold-accent);
+}
+
+.intro-right p {
+  color: #E6E1D8;
+  font-size: 1.02rem;
+  margin-bottom: 18px;
+}
+
+.welcome-note {
+  color: var(--gold-accent) !important;
+  font-weight: 600;
+}
+
+/* =========================================================
+   3. SEÇÃO CLARA COM LISTA, IMAGEM E VAPOR DE CAFÉ
+========================================================= */
+.band-light {
+  background-color: var(--cream-bg);
+  padding: 96px 0;
+}
+
+.split-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.feature-text h2 {
+  font-size: clamp(2rem, 3.5vw, 2.85rem);
+  color: var(--dark-forest);
+  margin-bottom: 18px;
+}
+
+.feature-text p {
+  color: var(--text-muted);
+  margin-bottom: 20px;
+}
+
+.editorial-list {
+  list-style: none;
+  margin-bottom: 30px;
+}
+
+.editorial-list li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 9px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.editorial-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--gold-strong);
+  font-weight: 900;
+}
+
+.photo-frame {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.14);
+}
+
+.photo-frame img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  display: block;
+}
+
+.frame-caption {
+  background: var(--dark-forest);
+  color: var(--gold-accent);
+  text-align: center;
+  padding: 12px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+.floating {
+  animation: gentleFloat 6s ease-in-out infinite;
+}
+
+@keyframes gentleFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+/* Animação de Vapor Saindo da Xícara de Café */
+.coffee-steam-wrap {
+  position: absolute;
+  right: 8%;      
+  bottom: 51%;
+  width: 95px;
+  height: 140px;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.steam-wisp {
+  position: absolute;
+  bottom: 0;
+  width: 32px;
+  height: 85px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(255, 255, 255, 0.85) 0%,
+    rgba(255, 255, 255, 0.42) 45%,
+    rgba(255, 255, 255, 0) 75%
+  );
+  border-radius: 50%;
+  filter: blur(5px); /* Blur um pouco menor deixa o traço do vapor mais visível */
+  opacity: 0;
+  animation: riseSteam 4s ease-in-out infinite;
+}
+
+.steam-wisp.s1 {
+  left: 12px;
+  animation-delay: 0s;
+}
+
+.steam-wisp.s2 {
+  left: 34px;
+  width: 36px;
+  animation-delay: 1.3s;
+  animation-duration: 4.5s;
+}
+
+.steam-wisp.s3 {
+  left: 52px;
+  width: 28px;
+  animation-delay: 2.5s;
+  animation-duration: 3.8s;
+}
+
+@keyframes riseSteam {
+  0% {
+    transform: translateY(10px) translateX(0) scaleX(0.85) scaleY(0.75);
+    opacity: 0;
+  }
+  25% {
+    opacity: 0.92; /* Pico de visibilidade maior */
+  }
+  65% {
+    transform: translateY(-48px) translateX(-6px) scaleX(1.25) scaleY(1.25);
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-100px) translateX(8px) scaleX(1.55) scaleY(1.5);
+    opacity: 0;
+  }
+}
+
+/* =========================================================
+   4. VITRINE 3 COLUNAS COM ETIQUETAS
+========================================================= */
+.band-white {
+  background-color: var(--white);
+  padding: 88px 0;
+}
+
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.showcase-item {
+  display: flex;
+  flex-direction: column;
+  transition: var(--transition);
+}
+
+.showcase-item:hover {
+  transform: translateY(-6px);
+}
+
+.item-img-box {
+  overflow: hidden;
+  height: 360px;
+  background-color: var(--cream-bg);
+}
+
+.item-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.showcase-item:hover .item-img-box img {
+  transform: scale(1.06);
+}
+
+.item-ribbon {
+  width: 100%;
+  background-color: var(--gold-accent);
+  color: var(--dark-forest);
+  border: none;
+  padding: 15px 12px;
+  font-family: 'Fraunces', serif;
+  font-size: 1.02rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.item-ribbon:hover {
+  background-color: var(--dark-forest);
+  color: var(--gold-accent);
+}
+
+.showcase-helper {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* =========================================================
+   5. FAIXA ESCURA 3 PILARES
+========================================================= */
+.band-title {
+  font-size: clamp(2.1rem, 3.8vw, 3rem);
+  color: var(--gold-accent);
+  margin-bottom: 48px;
+}
+
+.three-pillars {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  margin-bottom: 48px;
+}
+
+.pillar h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 1.15rem;
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.pillar p {
+  color: #CFC9BE;
+  font-size: 0.95rem;
+}
+
+.center-cta {
+  text-align: center;
+}
+
+/* =========================================================
+   6. BANNER FOTOGRÁFICO DE FECHAMENTO
+========================================================= */
+.closing-banner {
+  position: relative;
+  padding: 110px 0;
+  background-color: #171715;
+  background-image: url("imagens/biscoito-gourmet-corporativo-laco.webp.jpeg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+.closing-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(20, 20, 18, 0.72);
+  z-index: 1;
+}
+
+.closing-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+}
+
+.closing-content h2 {
+  font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+  color: var(--white);
+  margin-bottom: 28px;
+}
+
+.mini-reviews {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.mini-reviews blockquote {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  border-left: 3px solid var(--gold-accent);
+  padding: 16px 18px;
+  color: var(--white);
+  font-size: 0.88rem;
+}
+
+.mini-reviews strong {
+  color: var(--gold-accent);
+}
+
+/* =========================================================
+   7. RODAPÉ DOURADO COM FORMULÁRIO WHATSAPP
+========================================================= */
+.footer-editorial {
+  background-color: var(--gold-accent);
+  color: var(--dark-forest);
+  padding: 76px 0 60px;
+}
+
+.footer-top {
+  margin-bottom: 44px;
+  border-bottom: 1px solid rgba(23, 23, 21, 0.18);
+  padding-bottom: 22px;
+}
+
+.footer-brand-block h2 {
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+.footer-brand-block span {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 0.8fr;
+  gap: 40px;
+}
+
+.footer-col h3 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 16px;
+}
+
+.compact-form input,
+.compact-form select {
+  width: 100%;
+  padding: 11px 14px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid rgba(23, 23, 21, 0.25);
+  background: rgba(255, 255, 255, 0.88);
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.inline-inputs {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 10px;
+}
+
+.faq-list {
+  list-style: none;
+  font-size: 0.9rem;
+}
+
+.faq-list li {
+  margin-bottom: 10px;
+}
+
+.mt-sm {
+  margin-top: 14px;
+  font-size: 0.9rem;
+}
+
+.back-top {
+  display: inline-block;
+  margin-top: 16px;
+  color: var(--dark-forest);
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-decoration: none;
+}
+
+/* =========================================================
+   BOTÃO FLUTUANTE WHATSAPP
+========================================================= */
+.float-wa {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  background: var(--wa-green);
+  color: var(--white);
+  padding: 12px 22px;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.88rem;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+  z-index: 999;
+  transition: var(--transition);
+}
+
+.float-wa:hover {
+  transform: scale(1.05);
+}
+
+/* =========================================================
+   ANIMAÇÕES DE MOVIMENTO (SCROLL REVEAL)
+========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.delay-1 { transition-delay: 0.15s; }
+.delay-2 { transition-delay: 0.3s; }
+
+/* =========================================================
+   RESPONSIVIDADE (TABLET E MOBILE)
+========================================================= */
+@media (max-width: 900px) {
+  .hero-editorial {
+    min-height: 82vh;
+  }
+
+  .split-intro,
+  .split-feature,
+  .showcase-grid,
+  .three-pillars,
+  .footer-grid,
+  .mini-reviews {
+    grid-template-columns: 1fr;
+  }
+
+  .item-img-box {
+    height: 300px;
+  }
+}
